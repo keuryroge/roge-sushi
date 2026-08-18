@@ -1,0 +1,2310 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ROGE Sushi | Experiência Japonesa Contemporânea</title>
+
+    <meta
+        name="description"
+        content="ROGE Sushi — sushi, sashimi, temakis, combinados e uma experiência japonesa contemporânea."
+    >
+
+    <meta name="author" content="Keury Roge">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#080808">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ROGE Sushi">
+    <meta property="og:title" content="ROGE Sushi">
+    <meta
+        property="og:description"
+        content="Arte japonesa em cada detalhe."
+    >
+    <meta
+        property="og:image"
+        content="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=1200&q=90"
+    >
+
+    <meta name="twitter:card" content="summary_large_image">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "ROGE Sushi",
+        "servesCuisine": "Japanese",
+        "description": "Sushi, sashimi, temakis, combinados e gastronomia japonesa contemporânea.",
+        "priceRange": "$$",
+        "sameAs": [
+            "https://www.linkedin.com/in/keury-roge-97a2483b3",
+            "https://github.com/keuryroge"
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <a
+        href="#conteudo"
+        class="skip-link"
+        data-i18n="skipContent"
+    >
+        Ir para o conteúdo
+    </a>
+
+    <div class="scroll-progress">
+        <span id="scroll-progress"></span>
+    </div>
+
+    <div
+        class="loader"
+        id="loader"
+        aria-hidden="true"
+    >
+        <div class="loader-content">
+            <span id="loader-number">00</span>
+
+            <strong>
+                ROGE
+                <b>SUSHI</b>
+            </strong>
+
+            <div class="loader-line">
+                <span id="loader-line"></span>
+            </div>
+
+            <small>
+                JAPANESE EXPERIENCE
+            </small>
+        </div>
+    </div>
+
+    <header
+        class="header"
+        id="header"
+    >
+        <a
+            href="#inicio"
+            class="brand"
+            aria-label="ROGE Sushi"
+        >
+            ROGE
+            <span>SUSHI</span>
+        </a>
+
+        <nav
+            class="desktop-nav"
+            aria-label="Navegação principal"
+        >
+            <a href="#inicio" data-i18n="navHome">
+                Início
+            </a>
+
+            <a href="#mais-pedidos" data-i18n="navPopular">
+                Mais pedidos
+            </a>
+
+            <a href="#cardapio" data-i18n="navMenu">
+                Cardápio
+            </a>
+
+            <a href="#experiencia" data-i18n="navExperience">
+                Experiência
+            </a>
+
+            <a href="#reserva" data-i18n="navReservation">
+                Reserva
+            </a>
+
+            <a href="#contato" data-i18n="navContact">
+                Contato
+            </a>
+        </nav>
+
+        <div class="header-actions">
+
+            <button
+                class="icon-button search-button"
+                type="button"
+                onclick="irParaBusca()"
+                aria-label="Pesquisar cardápio"
+            >
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+            <button
+                class="language-button"
+                type="button"
+                onclick="alternarIdioma()"
+                aria-label="Alterar idioma"
+            >
+                <i class="fa-solid fa-globe"></i>
+                <strong id="language-label">
+                    PT
+                </strong>
+            </button>
+
+            <button
+                class="icon-button"
+                id="theme-toggle"
+                type="button"
+                aria-label="Alterar tema"
+            >
+                <i class="fa-regular fa-moon"></i>
+            </button>
+
+            <button
+                class="cart-button"
+                type="button"
+                onclick="abrirCarrinho()"
+                aria-label="Abrir carrinho"
+            >
+                <i class="fa-solid fa-bag-shopping"></i>
+
+                <span id="header-cart-count">
+                    0
+                </span>
+            </button>
+
+            <button
+                class="menu-button"
+                id="menu-button"
+                type="button"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+    </header>
+
+    <div
+        class="mobile-menu"
+        id="mobile-menu"
+        aria-hidden="true"
+    >
+        <span class="mobile-menu-kanji">
+            鮨
+        </span>
+
+        <div class="mobile-menu-inner">
+
+            <small>
+                ROGE / MENU
+            </small>
+
+            <nav>
+                <a href="#inicio" onclick="fecharMenu()">
+                    <span>01</span>
+                    <strong data-i18n="navHome">
+                        Início
+                    </strong>
+                </a>
+
+                <a href="#mais-pedidos" onclick="fecharMenu()">
+                    <span>02</span>
+                    <strong data-i18n="navPopular">
+                        Mais pedidos
+                    </strong>
+                </a>
+
+                <a href="#cardapio" onclick="fecharMenu()">
+                    <span>03</span>
+                    <strong data-i18n="navMenu">
+                        Cardápio
+                    </strong>
+                </a>
+
+                <a href="#experiencia" onclick="fecharMenu()">
+                    <span>04</span>
+                    <strong data-i18n="navExperience">
+                        Experiência
+                    </strong>
+                </a>
+
+                <a href="#reserva" onclick="fecharMenu()">
+                    <span>05</span>
+                    <strong data-i18n="navReservation">
+                        Reserva
+                    </strong>
+                </a>
+
+                <a href="#contato" onclick="fecharMenu()">
+                    <span>06</span>
+                    <strong data-i18n="navContact">
+                        Contato
+                    </strong>
+                </a>
+            </nav>
+
+            <div class="mobile-menu-footer">
+                <span>ROGE SUSHI</span>
+                <span>JAPANESE EXPERIENCE</span>
+            </div>
+
+        </div>
+    </div>
+
+    <main id="conteudo">
+
+        <section
+            class="hero"
+            id="inicio"
+        >
+            <div class="hero-background"></div>
+            <div class="hero-overlay"></div>
+            <div class="hero-noise"></div>
+
+            <span class="hero-kanji">
+                鮨
+            </span>
+
+            <div class="hero-content">
+
+                <div class="hero-topline reveal">
+
+                    <div
+                        class="restaurant-status"
+                        id="restaurant-status"
+                    >
+                        <i></i>
+
+                        <strong id="restaurant-status-text">
+                            ABERTO AGORA
+                        </strong>
+                    </div>
+
+                    <span data-i18n="heroEyebrow">
+                        JAPANESE FOOD • CONTEMPORARY EXPERIENCE
+                    </span>
+
+                </div>
+
+                <h1 class="reveal">
+                    <span data-i18n="heroTitle1">
+                        Arte japonesa
+                    </span>
+
+                    <br>
+
+                    <span data-i18n="heroTitle2">
+                        em cada
+                    </span>
+
+                    <em data-i18n="heroTitle3">
+                        detalhe.
+                    </em>
+                </h1>
+
+                <p
+                    class="hero-description reveal"
+                    data-i18n="heroDescription"
+                >
+                    Ingredientes selecionados, precisão e sabor em uma experiência japonesa contemporânea.
+                </p>
+
+                <div class="hero-actions reveal">
+
+                    <a
+                        href="#cardapio"
+                        class="primary-button"
+                    >
+                        <span data-i18n="viewMenu">
+                            Ver cardápio
+                        </span>
+
+                        <i class="fa-solid fa-arrow-right-long"></i>
+                    </a>
+
+                    <a
+                        href="#reserva"
+                        class="secondary-button"
+                    >
+                        <span data-i18n="reserveTable">
+                            Reservar mesa
+                        </span>
+                    </a>
+
+                </div>
+
+                <div class="hero-features reveal">
+
+                    <div>
+                        <span>01</span>
+                        <strong data-i18n="heroFeature1">
+                            INGREDIENTES SELECIONADOS
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>02</span>
+                        <strong data-i18n="heroFeature2">
+                            PREPARO PRECISO
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>03</span>
+                        <strong>SUSHI</strong>
+                    </div>
+
+                    <div>
+                        <span>04</span>
+                        <strong>OMAKASE</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <a
+                href="#mais-pedidos"
+                class="hero-scroll"
+            >
+                <span data-i18n="explore">
+                    EXPLORAR
+                </span>
+
+                <i class="fa-solid fa-arrow-down-long"></i>
+            </a>
+
+        </section>
+
+        <section class="marquee" aria-hidden="true">
+            <div class="marquee-track">
+                <span>ROGE SUSHI</span>
+                <i>✦</i>
+                <span>JAPANESE EXPERIENCE</span>
+                <i>✦</i>
+                <span>SUSHI</span>
+                <i>✦</i>
+                <span>SASHIMI</span>
+                <i>✦</i>
+                <span>TEMAKI</span>
+                <i>✦</i>
+                <span>OMAKASE</span>
+                <i>✦</i>
+                <span>ROGE SUSHI</span>
+                <i>✦</i>
+                <span>JAPANESE EXPERIENCE</span>
+                <i>✦</i>
+            </div>
+        </section>
+
+        <section
+            class="section popular-section"
+            id="mais-pedidos"
+        >
+            <div class="section-header reveal">
+
+                <div>
+                    <span
+                        class="eyebrow"
+                        data-i18n="popularEyebrow"
+                    >
+                        FAVORITOS DA CASA
+                    </span>
+
+                    <h2>
+                        <span data-i18n="popularTitle1">
+                            Os mais
+                        </span>
+
+                        <em data-i18n="popularTitle2">
+                            pedidos.
+                        </em>
+                    </h2>
+                </div>
+
+                <p data-i18n="popularDescription">
+                    Uma seleção dos pratos que conquistam primeiro.
+                </p>
+
+            </div>
+
+            <div
+                class="product-grid"
+                id="popular-products"
+            ></div>
+        </section>
+
+        <section
+            class="omakase"
+            id="experiencia"
+        >
+            <div class="omakase-background"></div>
+            <div class="omakase-overlay"></div>
+
+            <div class="omakase-content reveal">
+
+                <span class="omakase-jp">
+                    おまかせ
+                </span>
+
+                <small>
+                    ROGE EXPERIENCE
+                </small>
+
+                <h2>
+                    <span data-i18n="omakaseTitle1">
+                        Deixe a
+                    </span>
+
+                    <em data-i18n="omakaseTitle2">
+                        experiência
+                    </em>
+
+                    <span data-i18n="omakaseTitle3">
+                        surpreender você.
+                    </span>
+                </h2>
+
+                <p data-i18n="omakaseText">
+                    Uma experiência inspirada no conceito japonês de confiar ao chef a escolha de cada detalhe.
+                </p>
+
+                <a
+                    href="#cardapio"
+                    class="primary-button"
+                >
+                    <span data-i18n="discover">
+                        Descobrir
+                    </span>
+
+                    <i class="fa-solid fa-arrow-right-long"></i>
+                </a>
+
+            </div>
+        </section>
+
+        <section
+            class="section menu-section"
+            id="cardapio"
+        >
+
+            <div class="section-header reveal">
+
+                <div>
+                    <span
+                        class="eyebrow"
+                        data-i18n="menuEyebrow"
+                    >
+                        NOSSO CARDÁPIO
+                    </span>
+
+                    <h2>
+                        <span data-i18n="menuTitle1">
+                            Escolha seu
+                        </span>
+
+                        <em data-i18n="menuTitle2">
+                            favorito.
+                        </em>
+                    </h2>
+                </div>
+
+                <p data-i18n="menuDescription">
+                    Explore sabores clássicos e combinações contemporâneas.
+                </p>
+
+            </div>
+
+            <div class="menu-toolbar reveal">
+
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="search"
+                        id="menu-search"
+                        placeholder="Pesquisar no cardápio..."
+                        autocomplete="off"
+                        aria-label="Pesquisar no cardápio"
+                    >
+
+                    <button
+                        type="button"
+                        onclick="limparBusca()"
+                        aria-label="Limpar pesquisa"
+                    >
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
+                <select
+                    id="sort-products"
+                    aria-label="Ordenar produtos"
+                >
+                    <option value="featured">
+                        Destaques
+                    </option>
+
+                    <option value="price-asc">
+                        Menor preço
+                    </option>
+
+                    <option value="price-desc">
+                        Maior preço
+                    </option>
+
+                    <option value="name">
+                        Nome A–Z
+                    </option>
+                </select>
+
+            </div>
+
+            <div
+                class="categories reveal"
+                role="group"
+                aria-label="Categorias do cardápio"
+            >
+
+                <button
+                    class="category active"
+                    type="button"
+                    data-category="todos"
+                    data-i18n="categoryAll"
+                >
+                    Todos
+                </button>
+
+                <button
+                    class="category"
+                    type="button"
+                    data-category="mais-pedidos"
+                >
+                    <i class="fa-solid fa-fire"></i>
+
+                    <span data-i18n="categoryPopular">
+                        Mais pedidos
+                    </span>
+                </button>
+
+                <button
+                    class="category"
+                    type="button"
+                    data-category="favoritos"
+                >
+                    <i class="fa-regular fa-heart"></i>
+
+                    <span data-i18n="categoryFavorites">
+                        Favoritos
+                    </span>
+                </button>
+
+                <button
+                    class="category"
+                    type="button"
+                    data-category="combinados"
+                    data-i18n="categoryCombos"
+                >
+                    Combinados
+                </button>
+
+                <button
+                    class="category"
+                    type="button"
+                    data-category="sushi"
+                >
+                    Sushi
+                </button>
+
+                <button
+                    class="category"
+                    type="button"
+                    data-category="sashimi"
+                >
+                    Sashimi
+                </button>
+
+                <button
+                    class="category"
+                    type="button"
+                    data-category="temaki"
+                >
+                    Temaki
+                </button>
+
+                <button
+                    class="category"
+                    type="button"
+                    data-category="quentes"
+                    data-i18n="categoryHot"
+                >
+                    Quentes
+                </button>
+
+                <button
+                    class="category"
+                    type="button"
+                    data-category="bebidas"
+                    data-i18n="categoryDrinks"
+                >
+                    Bebidas
+                </button>
+
+            </div>
+
+            <div class="results-line reveal">
+                <span id="results-count">
+                    0 produtos
+                </span>
+
+                <button
+                    type="button"
+                    onclick="limparFiltros()"
+                    data-i18n="clearFilters"
+                >
+                    Limpar filtros
+                </button>
+            </div>
+
+            <div
+                class="product-grid"
+                id="products-grid"
+            ></div>
+
+            <div
+                class="no-results"
+                id="no-results"
+            >
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <h3 data-i18n="noResultsTitle">
+                    Nenhum resultado
+                </h3>
+
+                <p data-i18n="noResultsText">
+                    Tente outro termo ou categoria.
+                </p>
+            </div>
+
+        </section>
+
+        <section class="philosophy">
+            <span class="philosophy-kanji">
+                美
+            </span>
+
+            <div class="philosophy-content reveal">
+                <small>
+                    ROGE PHILOSOPHY
+                </small>
+
+                <h2>
+                    <span data-i18n="philosophy1">
+                        Comer também
+                    </span>
+
+                    <span data-i18n="philosophy2">
+                        é uma
+                    </span>
+
+                    <em data-i18n="philosophy3">
+                        experiência.
+                    </em>
+                </h2>
+            </div>
+        </section>
+
+        <section class="story">
+
+            <div class="story-gallery">
+
+                <img
+                    class="story-main"
+                    src="https://images.unsplash.com/photo-1611143669185-af224c5e3252?auto=format&fit=crop&w=1400&q=90"
+                    alt="Culinária japonesa"
+                    loading="lazy"
+                >
+
+                <img
+                    class="story-secondary"
+                    src="https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=900&q=90"
+                    alt="Sushi de salmão"
+                    loading="lazy"
+                >
+
+                <div class="story-stamp">
+                    <span>ROGE</span>
+                    <strong>鮨</strong>
+                    <small>SUSHI</small>
+                </div>
+
+            </div>
+
+            <div class="story-content reveal">
+
+                <span
+                    class="eyebrow"
+                    data-i18n="storyEyebrow"
+                >
+                    NOSSA ESSÊNCIA
+                </span>
+
+                <h2>
+                    <span data-i18n="storyTitle1">
+                        Japão
+                    </span>
+
+                    <span data-i18n="storyTitle2">
+                        encontra o
+                    </span>
+
+                    <em data-i18n="storyTitle3">
+                        contemporâneo.
+                    </em>
+                </h2>
+
+                <p data-i18n="storyText">
+                    Tradição, criatividade e apresentação se encontram para criar uma experiência japonesa contemporânea.
+                </p>
+
+                <div class="story-stats">
+
+                    <div>
+                        <strong id="product-total">
+                            20+
+                        </strong>
+
+                        <span data-i18n="menuOptions">
+                            OPÇÕES NO MENU
+                        </span>
+                    </div>
+
+                    <div>
+                        <strong>
+                            100%
+                        </strong>
+
+                        <span data-i18n="responsive">
+                            RESPONSIVO
+                        </span>
+                    </div>
+
+                    <div>
+                        <strong>
+                            PT / EN
+                        </strong>
+
+                        <span data-i18n="languages">
+                            IDIOMAS
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="section benefits">
+
+            <div class="section-header reveal">
+
+                <div>
+                    <span
+                        class="eyebrow"
+                        data-i18n="experienceEyebrow"
+                    >
+                        EXPERIÊNCIA ROGE
+                    </span>
+
+                    <h2>
+                        <span data-i18n="experienceTitle1">
+                            Cada detalhe
+                        </span>
+
+                        <em data-i18n="experienceTitle2">
+                            importa.
+                        </em>
+                    </h2>
+                </div>
+
+            </div>
+
+            <div class="benefits-grid">
+
+                <article class="benefit reveal">
+                    <span>01</span>
+                    <i class="fa-solid fa-fish"></i>
+
+                    <h3 data-i18n="freshnessTitle">
+                        Frescor
+                    </h3>
+
+                    <p data-i18n="freshnessText">
+                        Ingredientes selecionados para valorizar cada preparo.
+                    </p>
+                </article>
+
+                <article class="benefit reveal">
+                    <span>02</span>
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                    <h3 data-i18n="presentationTitle">
+                        Apresentação
+                    </h3>
+
+                    <p data-i18n="presentationText">
+                        Um prato precisa conquistar antes da primeira mordida.
+                    </p>
+                </article>
+
+                <article class="benefit reveal">
+                    <span>03</span>
+                    <i class="fa-solid fa-bag-shopping"></i>
+
+                    <h3 data-i18n="easyOrderTitle">
+                        Pedido fácil
+                    </h3>
+
+                    <p data-i18n="easyOrderText">
+                        Escolha, personalize e acompanhe seu pedido.
+                    </p>
+                </article>
+
+                <article class="benefit reveal">
+                    <span>04</span>
+                    <i class="fa-solid fa-heart"></i>
+
+                    <h3 data-i18n="favoritesTitle">
+                        Seus favoritos
+                    </h3>
+
+                    <p data-i18n="favoritesText">
+                        Salve os pratos que mais combinam com você.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+        <section
+            class="gallery"
+            aria-label="Galeria ROGE Sushi"
+        >
+
+            <button
+                type="button"
+                onclick="abrirGaleria(this)"
+            >
+                <img
+                    src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=1200&q=90"
+                    alt="Combinado de sushi"
+                    loading="lazy"
+                >
+                <span>01</span>
+            </button>
+
+            <button
+                type="button"
+                onclick="abrirGaleria(this)"
+            >
+                <img
+                    src="https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=900&q=90"
+                    alt="Sashimi de salmão"
+                    loading="lazy"
+                >
+                <span>02</span>
+            </button>
+
+            <button
+                type="button"
+                onclick="abrirGaleria(this)"
+            >
+                <img
+                    src="https://images.unsplash.com/photo-1617196034183-421b4917c92d?auto=format&fit=crop&w=900&q=90"
+                    alt="Sushi japonês"
+                    loading="lazy"
+                >
+                <span>03</span>
+            </button>
+
+            <button
+                type="button"
+                onclick="abrirGaleria(this)"
+            >
+                <img
+                    src="https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?auto=format&fit=crop&w=1200&q=90"
+                    alt="Prato japonês"
+                    loading="lazy"
+                >
+                <span>04</span>
+            </button>
+
+        </section>
+
+        <section class="section reviews">
+
+            <span
+                class="eyebrow"
+                data-i18n="reviewsEyebrow"
+            >
+                EXPERIÊNCIA DOS CLIENTES
+            </span>
+
+            <div class="review-slider reveal">
+
+                <button
+                    type="button"
+                    onclick="mudarReview(-1)"
+                    aria-label="Avaliação anterior"
+                >
+                    <i class="fa-solid fa-arrow-left-long"></i>
+                </button>
+
+                <article>
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+
+                    <blockquote id="review-text"></blockquote>
+
+                    <strong id="review-name"></strong>
+
+                    <span id="review-role"></span>
+                </article>
+
+                <button
+                    type="button"
+                    onclick="mudarReview(1)"
+                    aria-label="Próxima avaliação"
+                >
+                    <i class="fa-solid fa-arrow-right-long"></i>
+                </button>
+
+            </div>
+
+            <div
+                class="review-dots"
+                id="review-dots"
+            ></div>
+
+        </section>
+
+        <section
+            class="reservation"
+            id="reserva"
+        >
+
+            <div class="reservation-intro reveal">
+
+                <span
+                    class="eyebrow"
+                    data-i18n="reservationEyebrow"
+                >
+                    RESERVAS
+                </span>
+
+                <h2>
+                    <span data-i18n="reservationTitle1">
+                        Reserve
+                    </span>
+
+                    <span data-i18n="reservationTitle2">
+                        seu
+                    </span>
+
+                    <em data-i18n="reservationTitle3">
+                        momento.
+                    </em>
+                </h2>
+
+                <p data-i18n="reservationDescription">
+                    Escolha uma data e horário para viver a experiência ROGE.
+                </p>
+
+            </div>
+
+            <form
+                class="reservation-form reveal"
+                id="reservation-form"
+            >
+
+                <label>
+                    <span data-i18n="name">
+                        Nome
+                    </span>
+
+                    <input
+                        id="reservation-name"
+                        type="text"
+                        placeholder="Seu nome"
+                        required
+                    >
+                </label>
+
+                <label>
+                    <span data-i18n="phone">
+                        Telefone
+                    </span>
+
+                    <input
+                        id="reservation-phone"
+                        type="tel"
+                        placeholder="(83) 99999-9999"
+                        maxlength="15"
+                        required
+                    >
+                </label>
+
+                <label>
+                    <span data-i18n="date">
+                        Data
+                    </span>
+
+                    <input
+                        id="reservation-date"
+                        type="date"
+                        required
+                    >
+                </label>
+
+                <label>
+                    <span data-i18n="time">
+                        Horário
+                    </span>
+
+                    <select
+                        id="reservation-time"
+                        required
+                    >
+                        <option value="">
+                            Escolha
+                        </option>
+
+                        <option>18:00</option>
+                        <option>18:30</option>
+                        <option>19:00</option>
+                        <option>19:30</option>
+                        <option>20:00</option>
+                        <option>20:30</option>
+                        <option>21:00</option>
+                        <option>21:30</option>
+                        <option>22:00</option>
+                    </select>
+                </label>
+
+                <label class="full">
+                    <span data-i18n="people">
+                        Pessoas
+                    </span>
+
+                    <select
+                        id="reservation-people"
+                        required
+                    >
+                        <option value="">
+                            Quantidade
+                        </option>
+
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7+</option>
+                    </select>
+                </label>
+
+                <label class="full">
+                    <div class="label-row">
+                        <span data-i18n="notes">
+                            Observações
+                        </span>
+
+                        <small id="reservation-counter">
+                            0 / 150
+                        </small>
+                    </div>
+
+                    <textarea
+                        id="reservation-notes"
+                        maxlength="150"
+                        placeholder="Alguma informação adicional?"
+                    ></textarea>
+                </label>
+
+                <button
+                    type="submit"
+                    class="reservation-submit full"
+                >
+                    <span data-i18n="requestReservation">
+                        Solicitar reserva
+                    </span>
+
+                    <i class="fa-solid fa-arrow-right-long"></i>
+                </button>
+
+            </form>
+
+        </section>
+
+        <section
+            class="section contact"
+            id="contato"
+        >
+
+            <div class="section-header reveal">
+                <div>
+                    <span
+                        class="eyebrow"
+                        data-i18n="contactEyebrow"
+                    >
+                        CONTATO
+                    </span>
+
+                    <h2>
+                        <span data-i18n="contactTitle1">
+                            Estamos
+                        </span>
+
+                        <em data-i18n="contactTitle2">
+                            esperando você.
+                        </em>
+                    </h2>
+                </div>
+            </div>
+
+            <div class="contact-grid">
+
+                <article class="contact-card reveal">
+                    <span>01</span>
+                    <i class="fa-regular fa-clock"></i>
+
+                    <h3 data-i18n="hours">
+                        Horários
+                    </h3>
+
+                    <p data-i18n="hoursText">
+                        Terça a domingo • 18h às 23h
+                    </p>
+                </article>
+
+                <article class="contact-card reveal">
+                    <span>02</span>
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <h3 data-i18n="location">
+                        Localização
+                    </h3>
+
+                    <p data-i18n="locationText">
+                        Localização em definição.
+                    </p>
+                </article>
+
+                <article class="contact-card reveal">
+                    <span>03</span>
+                    <i class="fa-brands fa-whatsapp"></i>
+
+                    <h3>
+                        WhatsApp
+                    </h3>
+
+                    <p data-i18n="whatsappText">
+                        Canal de atendimento em configuração.
+                    </p>
+
+                    <button
+                        type="button"
+                        onclick="avisoWhatsApp()"
+                    >
+                        <span data-i18n="talkToUs">
+                            Falar conosco
+                        </span>
+
+                        <i class="fa-solid fa-arrow-right-long"></i>
+                    </button>
+                </article>
+
+                <article class="contact-card reveal">
+                    <span>04</span>
+                    <i class="fa-brands fa-instagram"></i>
+
+                    <h3>
+                        Instagram
+                    </h3>
+
+                    <p data-i18n="instagramText">
+                        Perfil oficial em breve.
+                    </p>
+
+                    <button
+                        type="button"
+                        onclick="avisoInstagram()"
+                    >
+                        <span data-i18n="followUs">
+                            Seguir ROGE Sushi
+                        </span>
+
+                        <i class="fa-solid fa-arrow-right-long"></i>
+                    </button>
+                </article>
+
+            </div>
+
+        </section>
+
+        <section class="section faq">
+
+            <div class="faq-heading reveal">
+
+                <span class="eyebrow">
+                    FAQ
+                </span>
+
+                <h2>
+                    <span data-i18n="faqTitle1">
+                        Dúvidas
+                    </span>
+
+                    <em data-i18n="faqTitle2">
+                        frequentes.
+                    </em>
+                </h2>
+
+            </div>
+
+            <div class="faq-list">
+
+                <article class="faq-item reveal">
+                    <button type="button">
+                        <span data-i18n="faqQuestion1">
+                            Posso fazer pedidos pelo site?
+                        </span>
+
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+
+                    <div>
+                        <p data-i18n="faqAnswer1">
+                            O fluxo de pedido está disponível como demonstração.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="faq-item reveal">
+                    <button type="button">
+                        <span data-i18n="faqQuestion2">
+                            O pagamento é feito online?
+                        </span>
+
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+
+                    <div>
+                        <p data-i18n="faqAnswer2">
+                            Não. Nenhuma cobrança real é realizada.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="faq-item reveal">
+                    <button type="button">
+                        <span data-i18n="faqQuestion3">
+                            Os favoritos ficam salvos?
+                        </span>
+
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+
+                    <div>
+                        <p data-i18n="faqAnswer3">
+                            Sim. Eles permanecem salvos no navegador.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="faq-item reveal">
+                    <button type="button">
+                        <span data-i18n="faqQuestion4">
+                            Posso mudar o site para inglês?
+                        </span>
+
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+
+                    <div>
+                        <p data-i18n="faqAnswer4">
+                            Sim. Use o botão PT/EN no topo.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+
+        </section>
+
+        <section class="final-cta">
+
+            <span class="final-kanji">
+                終
+            </span>
+
+            <div class="final-content reveal">
+                <small>
+                    ROGE SUSHI
+                </small>
+
+                <h2>
+                    <span data-i18n="finalTitle1">
+                        Seu próximo
+                    </span>
+
+                    <em data-i18n="finalTitle2">
+                        favorito.
+                    </em>
+                </h2>
+
+                <div>
+                    <a
+                        href="#cardapio"
+                        class="primary-button"
+                        data-i18n="viewMenu"
+                    >
+                        Ver cardápio
+                    </a>
+
+                    <a
+                        href="#reserva"
+                        class="secondary-button"
+                        data-i18n="reserveTable"
+                    >
+                        Reservar mesa
+                    </a>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+
+        <div class="footer-grid">
+
+            <div>
+                <div class="footer-brand">
+                    ROGE
+                    <span>SUSHI</span>
+                </div>
+
+                <p>
+                    Japanese Food • Contemporary Experience
+                </p>
+
+                <div class="developer-credit">
+                    <span data-i18n="developedBy">
+                        Desenvolvido por
+                    </span>
+
+                    <a
+                        href="https://www.linkedin.com/in/keury-roge-97a2483b3"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Keury Roge
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <strong data-i18n="navigation">
+                    NAVEGAÇÃO
+                </strong>
+
+                <a href="#inicio" data-i18n="navHome">
+                    Início
+                </a>
+
+                <a href="#cardapio" data-i18n="navMenu">
+                    Cardápio
+                </a>
+
+                <a href="#experiencia" data-i18n="navExperience">
+                    Experiência
+                </a>
+
+                <a href="#reserva" data-i18n="navReservation">
+                    Reserva
+                </a>
+            </div>
+
+            <div class="footer-links">
+                <strong data-i18n="developer">
+                    DESENVOLVIMENTO
+                </strong>
+
+                <a
+                    href="https://github.com/keuryroge"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <i class="fa-brands fa-github"></i>
+                    GitHub
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/in/keury-roge-97a2483b3"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <i class="fa-brands fa-linkedin-in"></i>
+                    LinkedIn
+                </a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <span>
+                © 2026 ROGE Sushi
+            </span>
+
+            <span data-i18n="rights">
+                Todos os direitos reservados.
+            </span>
+        </div>
+
+    </footer>
+
+    <nav
+        class="mobile-nav"
+        aria-label="Navegação mobile"
+    >
+        <a href="#inicio">
+            <i class="fa-solid fa-house"></i>
+            <span data-i18n="mobileHome">
+                Início
+            </span>
+        </a>
+
+        <a href="#cardapio">
+            <i class="fa-solid fa-utensils"></i>
+            <span data-i18n="mobileMenu">
+                Cardápio
+            </span>
+        </a>
+
+        <button
+            type="button"
+            onclick="abrirCarrinho()"
+        >
+            <div>
+                <i class="fa-solid fa-bag-shopping"></i>
+                <b id="mobile-cart-count">
+                    0
+                </b>
+            </div>
+
+            <span data-i18n="mobileCart">
+                Carrinho
+            </span>
+        </button>
+
+        <a href="#reserva">
+            <i class="fa-regular fa-calendar"></i>
+            <span data-i18n="mobileReservation">
+                Reserva
+            </span>
+        </a>
+
+        <a href="#contato">
+            <i class="fa-solid fa-ellipsis"></i>
+            <span data-i18n="mobileMore">
+                Mais
+            </span>
+        </a>
+    </nav>
+
+    <button
+        class="floating-cart"
+        id="floating-cart"
+        type="button"
+        onclick="abrirCarrinho()"
+    >
+        <div>
+            <i class="fa-solid fa-bag-shopping"></i>
+
+            <span>
+                <strong id="floating-cart-count">
+                    0 itens
+                </strong>
+
+                <small id="floating-cart-total">
+                    R$ 0,00
+                </small>
+            </span>
+        </div>
+
+        <span>
+            <span data-i18n="viewOrder">
+                Ver pedido
+            </span>
+
+            <i class="fa-solid fa-arrow-right-long"></i>
+        </span>
+    </button>
+
+    <div
+        class="modal-overlay"
+        id="product-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-product-name"
+    >
+        <div class="product-modal">
+
+            <button
+                type="button"
+                class="modal-close"
+                onclick="fecharProduto()"
+                aria-label="Fechar"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="modal-image">
+                <img
+                    id="modal-product-image"
+                    src=""
+                    alt=""
+                >
+            </div>
+
+            <div class="modal-content">
+
+                <span
+                    class="modal-tag"
+                    id="modal-product-tag"
+                ></span>
+
+                <h2 id="modal-product-name"></h2>
+
+                <p id="modal-product-description"></p>
+
+                <div class="modal-meta">
+                    <span id="modal-product-category"></span>
+                    <strong id="modal-product-price"></strong>
+                </div>
+
+                <label class="modal-notes">
+
+                    <div class="label-row">
+                        <span data-i18n="notes">
+                            Observações
+                        </span>
+
+                        <small id="modal-counter">
+                            0 / 100
+                        </small>
+                    </div>
+
+                    <textarea
+                        id="modal-observation"
+                        maxlength="100"
+                        placeholder="Ex: sem cream cheese..."
+                    ></textarea>
+                </label>
+
+                <div class="modal-quantity">
+                    <span data-i18n="quantity">
+                        Quantidade
+                    </span>
+
+                    <div>
+                        <button
+                            type="button"
+                            onclick="mudarQuantidadeModal(-1)"
+                        >
+                            −
+                        </button>
+
+                        <strong id="modal-quantity">
+                            1
+                        </strong>
+
+                        <button
+                            type="button"
+                            onclick="mudarQuantidadeModal(1)"
+                        >
+                            +
+                        </button>
+                    </div>
+                </div>
+
+                <button
+                    type="button"
+                    class="modal-add"
+                    onclick="adicionarModalCarrinho()"
+                >
+                    <span data-i18n="add">
+                        Adicionar
+                    </span>
+
+                    <strong id="modal-total"></strong>
+                </button>
+
+            </div>
+        </div>
+    </div>
+
+    <div
+        class="drawer-overlay"
+        id="cart-overlay"
+    >
+        <aside
+            class="cart-drawer"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Carrinho"
+        >
+
+            <header>
+                <div>
+                    <small data-i18n="yourOrder">
+                        SEU PEDIDO
+                    </small>
+
+                    <h2 data-i18n="cart">
+                        Carrinho
+                    </h2>
+                </div>
+
+                <button
+                    type="button"
+                    onclick="fecharCarrinho()"
+                    aria-label="Fechar carrinho"
+                >
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </header>
+
+            <div class="cart-toolbar">
+                <span id="cart-item-count">
+                    0 itens
+                </span>
+
+                <button
+                    type="button"
+                    onclick="limparCarrinho()"
+                    data-i18n="clearCart"
+                >
+                    Limpar
+                </button>
+            </div>
+
+            <div
+                class="cart-items"
+                id="cart-items"
+            ></div>
+
+            <section
+                class="cart-recommendations"
+                id="cart-recommendations"
+            >
+                <span data-i18n="completeOrder">
+                    COMPLETE SEU PEDIDO
+                </span>
+
+                <div id="cart-recommendation-list"></div>
+            </section>
+
+            <div class="shipping-progress">
+
+                <div>
+                    <i class="fa-solid fa-motorcycle"></i>
+
+                    <span id="shipping-progress-text"></span>
+                </div>
+
+                <div class="shipping-bar">
+                    <span id="shipping-progress-bar"></span>
+                </div>
+
+            </div>
+
+            <footer>
+
+                <div>
+                    <span data-i18n="subtotal">
+                        Subtotal
+                    </span>
+
+                    <strong id="cart-subtotal">
+                        R$ 0,00
+                    </strong>
+                </div>
+
+                <button
+                    type="button"
+                    onclick="abrirCheckout()"
+                >
+                    <span data-i18n="checkout">
+                        Finalizar pedido
+                    </span>
+
+                    <i class="fa-solid fa-arrow-right-long"></i>
+                </button>
+
+            </footer>
+
+        </aside>
+    </div>
+
+    <div
+        class="checkout-overlay"
+        id="checkout-overlay"
+    >
+        <div
+            class="checkout-panel"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Checkout"
+        >
+
+            <header>
+                <div>
+                    <small>
+                        ROGE SUSHI
+                    </small>
+
+                    <h2>
+                        Checkout
+                    </h2>
+                </div>
+
+                <button
+                    type="button"
+                    onclick="fecharCheckout()"
+                    aria-label="Fechar checkout"
+                >
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </header>
+
+            <div class="checkout-steps">
+
+                <div
+                    class="checkout-step active"
+                    data-step="1"
+                >
+                    <strong>1</strong>
+                    <span data-i18n="delivery">
+                        Entrega
+                    </span>
+                </div>
+
+                <i></i>
+
+                <div
+                    class="checkout-step"
+                    data-step="2"
+                >
+                    <strong>2</strong>
+                    <span data-i18n="details">
+                        Dados
+                    </span>
+                </div>
+
+                <i></i>
+
+                <div
+                    class="checkout-step"
+                    data-step="3"
+                >
+                    <strong>3</strong>
+                    <span data-i18n="payment">
+                        Pagamento
+                    </span>
+                </div>
+
+            </div>
+
+            <div class="checkout-body">
+
+                <section
+                    class="checkout-page active"
+                    data-page="1"
+                >
+                    <small>STEP 01</small>
+
+                    <h3 data-i18n="receiveQuestion">
+                        Como deseja receber?
+                    </h3>
+
+                    <div class="delivery-options">
+
+                        <label class="delivery-option active">
+                            <input
+                                type="radio"
+                                name="delivery-type"
+                                value="delivery"
+                                checked
+                            >
+
+                            <i class="fa-solid fa-motorcycle"></i>
+
+                            <div>
+                                <strong data-i18n="delivery">
+                                    Entrega
+                                </strong>
+
+                                <span data-i18n="receiveAtAddress">
+                                    Receber no endereço
+                                </span>
+                            </div>
+                        </label>
+
+                        <label class="delivery-option">
+                            <input
+                                type="radio"
+                                name="delivery-type"
+                                value="pickup"
+                            >
+
+                            <i class="fa-solid fa-store"></i>
+
+                            <div>
+                                <strong data-i18n="pickup">
+                                    Retirada
+                                </strong>
+
+                                <span data-i18n="noDeliveryFee">
+                                    Sem taxa de entrega
+                                </span>
+                            </div>
+                        </label>
+
+                    </div>
+
+                    <div class="demo-warning">
+                        <i class="fa-solid fa-circle-info"></i>
+
+                        <p data-i18n="checkoutDemo">
+                            Checkout demonstrativo. Nenhuma cobrança real será realizada.
+                        </p>
+                    </div>
+
+                </section>
+
+                <section
+                    class="checkout-page"
+                    data-page="2"
+                >
+                    <small>STEP 02</small>
+
+                    <h3 data-i18n="yourDetails">
+                        Seus dados
+                    </h3>
+
+                    <div class="checkout-form">
+
+                        <label class="full">
+                            <span data-i18n="name">
+                                Nome
+                            </span>
+
+                            <input
+                                id="client-name"
+                                type="text"
+                                placeholder="Seu nome"
+                            >
+                        </label>
+
+                        <label class="full">
+                            <span data-i18n="phone">
+                                Telefone
+                            </span>
+
+                            <input
+                                id="client-phone"
+                                type="tel"
+                                maxlength="15"
+                                placeholder="(83) 99999-9999"
+                            >
+                        </label>
+
+                        <div
+                            class="address-fields full"
+                            id="address-fields"
+                        >
+
+                            <label class="full">
+                                <span data-i18n="street">
+                                    Rua / Avenida
+                                </span>
+
+                                <input
+                                    id="client-address"
+                                    type="text"
+                                    placeholder="Rua / Avenida"
+                                >
+                            </label>
+
+                            <label>
+                                <span data-i18n="number">
+                                    Número
+                                </span>
+
+                                <input
+                                    id="client-number"
+                                    type="text"
+                                    placeholder="100"
+                                >
+                            </label>
+
+                            <label>
+                                <span data-i18n="neighborhood">
+                                    Bairro
+                                </span>
+
+                                <input
+                                    id="client-neighborhood"
+                                    type="text"
+                                    placeholder="Centro"
+                                >
+                            </label>
+
+                            <label class="full">
+                                <span data-i18n="complement">
+                                    Complemento
+                                </span>
+
+                                <input
+                                    id="client-complement"
+                                    type="text"
+                                    placeholder="Opcional"
+                                >
+                            </label>
+
+                        </div>
+
+                    </div>
+                </section>
+
+                <section
+                    class="checkout-page"
+                    data-page="3"
+                >
+                    <small>STEP 03</small>
+
+                    <h3 data-i18n="reviewOrder">
+                        Revise seu pedido
+                    </h3>
+
+                    <div class="coupon">
+                        <label data-i18n="coupon">
+                            Cupom
+                        </label>
+
+                        <div>
+                            <input
+                                id="coupon-input"
+                                type="text"
+                                placeholder="ROGE10"
+                            >
+
+                            <button
+                                type="button"
+                                onclick="aplicarCupom()"
+                                data-i18n="apply"
+                            >
+                                Aplicar
+                            </button>
+                        </div>
+
+                        <small id="coupon-message"></small>
+                    </div>
+
+                    <div class="payment-options">
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="payment"
+                                value="pix"
+                                checked
+                            >
+                            <span>PIX</span>
+                        </label>
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="payment"
+                                value="credit"
+                            >
+                            <span data-i18n="credit">
+                                Crédito
+                            </span>
+                        </label>
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="payment"
+                                value="debit"
+                            >
+                            <span data-i18n="debit">
+                                Débito
+                            </span>
+                        </label>
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="payment"
+                                value="cash"
+                            >
+                            <span data-i18n="cash">
+                                Dinheiro
+                            </span>
+                        </label>
+
+                    </div>
+
+                    <label
+                        class="change-field"
+                        id="change-field"
+                    >
+                        <span data-i18n="changeFor">
+                            Troco para
+                        </span>
+
+                        <input
+                            id="change-value"
+                            type="number"
+                            placeholder="100"
+                        >
+                    </label>
+
+                    <label class="checkout-notes">
+                        <span data-i18n="notes">
+                            Observações
+                        </span>
+
+                        <textarea
+                            id="order-observation"
+                            maxlength="150"
+                            placeholder="Informações adicionais..."
+                        ></textarea>
+                    </label>
+
+                    <div class="checkout-summary">
+
+                        <div>
+                            <span data-i18n="subtotal">
+                                Subtotal
+                            </span>
+
+                            <strong id="checkout-subtotal">
+                                R$ 0,00
+                            </strong>
+                        </div>
+
+                        <div
+                            id="discount-row"
+                            class="hidden"
+                        >
+                            <span data-i18n="discount">
+                                Desconto
+                            </span>
+
+                            <strong id="checkout-discount">
+                                R$ 0,00
+                            </strong>
+                        </div>
+
+                        <div>
+                            <span data-i18n="delivery">
+                                Entrega
+                            </span>
+
+                            <strong id="checkout-delivery">
+                                R$ 0,00
+                            </strong>
+                        </div>
+
+                        <div class="checkout-total">
+                            <span data-i18n="total">
+                                Total
+                            </span>
+
+                            <strong id="checkout-total">
+                                R$ 0,00
+                            </strong>
+                        </div>
+
+                        <p id="shipping-message"></p>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+            <footer>
+
+                <button
+                    id="checkout-back"
+                    type="button"
+                    onclick="checkoutAnterior()"
+                >
+                    <i class="fa-solid fa-arrow-left-long"></i>
+
+                    <span data-i18n="back">
+                        Voltar
+                    </span>
+                </button>
+
+                <button
+                    id="checkout-next"
+                    type="button"
+                    onclick="checkoutProximo()"
+                ></button>
+
+            </footer>
+
+        </div>
+    </div>
+
+    <div
+        class="success-overlay"
+        id="order-success"
+    >
+        <div class="success-card">
+
+            <div class="success-icon">
+                <i class="fa-solid fa-check"></i>
+            </div>
+
+            <small data-i18n="simulationComplete">
+                SIMULAÇÃO CONCLUÍDA
+            </small>
+
+            <h2 data-i18n="orderReady">
+                Pedido montado.
+            </h2>
+
+            <p data-i18n="noRealPayment">
+                Nenhuma compra ou cobrança real foi realizada.
+            </p>
+
+            <strong id="success-total">
+                R$ 0,00
+            </strong>
+
+            <button
+                type="button"
+                onclick="fecharSucessoPedido()"
+                data-i18n="finish"
+            >
+                Concluir
+            </button>
+
+        </div>
+    </div>
+
+    <div
+        class="success-overlay"
+        id="reservation-success"
+    >
+        <div class="success-card">
+
+            <div class="success-icon">
+                <i class="fa-regular fa-calendar-check"></i>
+            </div>
+
+            <small data-i18n="reservationRequest">
+                SOLICITAÇÃO DE RESERVA
+            </small>
+
+            <h2 data-i18n="reservationRegistered">
+                Reserva registrada.
+            </h2>
+
+            <p id="reservation-success-text"></p>
+
+            <button
+                type="button"
+                onclick="fecharReservaSucesso()"
+                data-i18n="finish"
+            >
+                Concluir
+            </button>
+
+        </div>
+    </div>
+
+    <div
+        class="lightbox"
+        id="lightbox"
+    >
+        <button
+            type="button"
+            onclick="fecharGaleria()"
+            aria-label="Fechar imagem"
+        >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <img
+            id="lightbox-image"
+            src=""
+            alt=""
+        >
+    </div>
+
+    <div
+        class="toast"
+        id="toast"
+        role="status"
+        aria-live="polite"
+    >
+        <i class="fa-solid fa-check"></i>
+        <span id="toast-text"></span>
+    </div>
+
+    <button
+        class="back-top"
+        id="back-top"
+        type="button"
+        onclick="window.scrollTo({top:0,behavior:'smooth'})"
+        aria-label="Voltar ao topo"
+    >
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
