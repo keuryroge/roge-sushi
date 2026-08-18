@@ -1,4 +1,5 @@
 # 🍣 ROGE Sushi
+![ROGE Sushi Preview](preview.png)
 
 ROGE Sushi is a modern and responsive Japanese restaurant website designed to provide an elegant and intuitive digital experience.
 
